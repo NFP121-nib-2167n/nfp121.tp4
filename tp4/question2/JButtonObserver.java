@@ -1,7 +1,8 @@
 package question2;
 
-//import java.awt.event. // à compléter
-//import java.awt.event. // à compléter
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
 import java.awt.TextArea;
 
 /**
@@ -10,10 +11,11 @@ import java.awt.TextArea;
  * @author (votre nom)
  * @version (un numéro de version ou une date)
  */
-public class JButtonObserver { // à compléter
+public class JButtonObserver implements ActionListener{ 
 
     private String nom;
     private TextArea contenu;
+    private String nom_du_bouton="";
 
     /**
      * Constructeur d'objets de classe JButtonObserver
@@ -36,8 +38,20 @@ public class JButtonObserver { // à compléter
      * @param à
      *            compléter
      */
-    public void action________/* à compléter */(/* à compléter */) {
-        String message = ""; // à compléter, inspirez-vous de l'applette de l'énoncé
+    public void actionPerformed(ActionEvent e) {
+          if(e.getActionCommand().equals("A")){
+            nom_du_bouton = "A";
+        }
+        
+        if(e.getActionCommand().equals("B")){
+            nom_du_bouton = "B";
+        }
+        
+        if(e.getActionCommand().equals("C")){
+            nom_du_bouton = "C";
+        }
+        
+        String message = "observateur "+this.nom+ " : clic du bouton "+ nom_du_bouton;
         contenu.append(message + "\n");
     }
 
